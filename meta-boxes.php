@@ -68,11 +68,17 @@ class FD_Meta_Boxes
         add_action('save_post', array($this, 'save_details'));
     }
 
+    /**
+     * Admin Init to actually add the meta box
+     */
     public function admin_init()
     {
         add_meta_box($this->meta_box['id'], $this->meta_box['title'], array($this, 'display_fields'), $this->meta_box['post_type']);
     }
 
+    /**
+     * Display the fields in the edit pages
+     */
     public function display_fields()
     {
         global $post;
@@ -95,6 +101,9 @@ class FD_Meta_Boxes
         reset($this->meta_box);
     }
 
+    /**
+     * Save details when data is updated
+     */
     public function save_details()
     {
         global $post;
