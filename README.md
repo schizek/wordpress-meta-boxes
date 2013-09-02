@@ -1,4 +1,4 @@
-wordpress-meta-boxes
+WordPress Meta Boxes
 ====================
 
 A class to easily add custom meta boxes and fields programmatically
