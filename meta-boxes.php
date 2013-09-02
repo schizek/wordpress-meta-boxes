@@ -69,6 +69,12 @@ class FD_Meta_Boxes
                 case 'textarea':
                     echo '<textarea name="' . $field['key'] . '" style="width: 98%; ' . (!empty($field['style']) ? ' '.$field['style'] : null) . '"' . (!empty($field['rows']) ? ' rows="'.$field['rows'].'"' : null) . '>' . $value . '</textarea>';
                     break;
+                case 'radio':
+                    foreach ($field['options'] as $key=>$option) {
+                        $checked = ($value == $option['value']) ? ' checked="checked"' : null;
+                        echo '<input type="radio" name="' . $field['key'] . '" value="'.$option['value'].'" id="'.$field['key'].'-'.$key.'"'.$checked.'> <label for="'.$field['key'].'-'.$key.'">'.$option['label'].'</label><br />';
+                    }
+                    break;
                 case 'text':
                 default:
                     echo '<input name="' . $field['key'] . '" value="' . $value . '"' . (!empty($field['style']) ? ' style="'.$field['style'].'"' : null) . '" />';
