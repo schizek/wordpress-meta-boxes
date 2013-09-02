@@ -3,7 +3,8 @@ WordPress Meta Boxes
 
 A class to easily add custom meta boxes and fields programmatically
 
-Example Usage...
+Example Usage
+-------------
 
     $meta_box = array(
         'id'        => 'my-custom-meta',
